@@ -61,8 +61,8 @@ It's simple!
 ``` swift
 let tintColor = UIColor.RGB(red: 251, green: 75, blue: 16)
 
-``` swift
-let tintColor = UIColor.colorFromHex("E8E8E8")
+let tintColor = UIColor.fromHex("E8E8E8")
+```
 
 ##Requirements
 iOS 8+
