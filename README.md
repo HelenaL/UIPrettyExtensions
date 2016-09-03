@@ -1,9 +1,6 @@
 # UIPrettyExtensions
 UI extensions for iOs.
 
-UIPrettyExtensions
-=================
-
 Elegant and usefull method for every project. Helps write more strongly typed code.
 
 ## How To Install
