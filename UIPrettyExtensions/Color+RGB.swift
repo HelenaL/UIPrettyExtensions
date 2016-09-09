@@ -2,17 +2,17 @@ import UIKit
 
 extension UIColor {
 
-    public class func RGB(red red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1.0) -> UIColor {
+    public class func RGB(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1.0) -> UIColor {
         return UIColor(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: 1.0)
     }
     
-    public class func fromHex(str: String, alpha: CGFloat = 1.0) -> UIColor? {
+    public class func fromHex(_ str: String, alpha: CGFloat = 1.0) -> UIColor? {
         
-        func hexStringToInt(str: String) -> Int? {
-            let scanner = NSScanner(string: str)
-            scanner.charactersToBeSkipped = NSCharacterSet(charactersInString: "#")
+        func hexStringToInt(_ str: String) -> Int? {
+            let scanner = Scanner(string: str)
+            scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
             var result: UInt32 = 0
-            if scanner.scanHexInt(&result) {
+            if scanner.scanHexInt32(&result) {
                 return Int(result)
             }
             return nil
