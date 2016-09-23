@@ -15,24 +15,25 @@ Use generic functions to use classes as reuse identifier.
 
 ``` swift
 override func viewDidLoad() {
-    tableView.registerNibCell(MyCustomTableCell.self)
+    tableView.registerNibCell(nibClass: MyCustomTableCell.self)
 
 func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(MyCustomTableCell.self, forIndexPath: indexPath)
+    let cell = tableView.dequeueReusableCell(className: MyCustomTableCell.self, for: indexPath)
 
 ```
 
 ``` swift
 override func viewDidLoad() {
-    collectionView.registerNibCell(MyCustomCollectionCell.self)
-    collectionView.registerNibFooter(MyCustomFooterView.self)
-
-func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(MyCustomFooterView.self, forIndexPath: indexPath)
+    collectionView.registerNibCell(nibClass:MyCustomCollectionCell.self)
+    collectionView.registerNibFooter(nibClass: MyCustomFooterView.self)
 
 
-func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-    let footer = collectionView.dequeueReusableFooter(MyCustomFooterView.self, forIndexPath: indexPath)
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(className: MyCustomFooterView.self, for: indexPath)
+
+
+func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    let footer = collectionView.dequeueReusableFooter(className: MyCustomFooterView.self, for: indexPath)
 
 ```
 
@@ -51,7 +52,7 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     switch segueIdentifier {
         case .ShowList:
 
-func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     self.performSegueWithIdentifier(SegueIdentifier.ShowList.rawValue, sender: indexPath)
 ```
 
