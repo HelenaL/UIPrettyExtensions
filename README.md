@@ -24,7 +24,7 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
 
 ``` swift
 override func viewDidLoad() {
-    collectionView.registerNibCell(nibClass:MyCustomCollectionCell.self)
+    collectionView.registerNibCell(nibClass: MyCustomCollectionCell.self)
     collectionView.registerNibFooter(nibClass: MyCustomFooterView.self)
 
 

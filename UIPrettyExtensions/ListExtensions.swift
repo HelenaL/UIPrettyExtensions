@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
     
     public func registerNibCell<T: UICollectionViewCell>(nibClass: T.Type) {
         let nibName = "\(T.self)"
@@ -51,7 +51,7 @@ extension UICollectionView {
     
 }
 
-extension UITableView {
+public extension UITableView {
     
     public func registerNibCell<T: UITableViewCell>(nibClass: T.Type) {
         let nibName = "\(T.self)"

@@ -4,7 +4,7 @@ public protocol SegueHandlerType {
     associatedtype SegueIdentifier: RawRepresentable
 }
 
-extension SegueHandlerType where Self: UIViewController, SegueIdentifier.RawValue == String {
+public extension SegueHandlerType where Self: UIViewController, SegueIdentifier.RawValue == String {
 
     public func performSegueWithIdentifier(_ segueIdentifier: SegueIdentifier, sender: AnyObject?) {
         performSegue(withIdentifier: segueIdentifier.rawValue, sender: sender)
