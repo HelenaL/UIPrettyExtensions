@@ -2,7 +2,7 @@
 //  UIPrettyExtensions.h
 //  UIPrettyExtensions
 //
-//  Created by Sergey Shatunov on 9/3/16.
+//  Created by Elena Shatunova on 9/3/16.
 //  Copyright © 2016 Helena. All rights reserved.
 //
 
